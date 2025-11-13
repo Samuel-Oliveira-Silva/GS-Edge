@@ -1,65 +1,68 @@
-# 🧠 Monitor Inteligente de Postura e Ambiente – IoT com ESP32 e MQTT
-
-## 📌 Descrição Geral
-O projeto **Monitor Inteligente de Postura e Ambiente** busca promover **saúde e bem-estar no ambiente de trabalho**, utilizando **Internet das Coisas (IoT)** e **automação inteligente**.
-
-Com o aumento do trabalho remoto, a má postura, a fadiga ocular e o sedentarismo se tornaram problemas comuns.  
-A proposta deste sistema é **monitorar em tempo real** a postura, o tempo sentado e as condições do ambiente, emitindo **alertas automáticos** para incentivar pausas e corrigir comportamentos prejudiciais.
+# 🧠 Monitor Inteligente de Postura e Ambiente – IoT com ESP32 e MQTT  
 
 ---
 
-## 🧩 Problema Identificado
-O cenário atual do trabalho digital trouxe novos desafios à saúde e produtividade:
+## 📘 Descrição Geral  
 
-- Permanência excessiva sentado;
-- Postura inadequada e dores musculares;
-- Exposição prolongada à tela;
-- Ambientes com temperatura desconfortável.
+O projeto **Monitor Inteligente de Postura e Ambiente** foi desenvolvido para **promover saúde, conforto e eficiência no ambiente de trabalho**.  
+Com o avanço do trabalho remoto, surgem desafios como **má postura, sedentarismo e desconforto térmico**.  
 
-Esses fatores prejudicam a qualidade de vida e o desempenho profissional.  
-O projeto se propõe a mitigar esses efeitos através de **monitoramento inteligente e feedback imediato**.
+Este sistema IoT, baseado em **ESP32 e protocolo MQTT**, monitora a postura do usuário, o tempo sentado e o ambiente, enviando alertas em tempo real para **melhorar hábitos e prevenir problemas físicos**.  
 
 ---
 
-## 💡 Solução Desenvolvida
-O **Monitor Inteligente de Postura e Ambiente** é um sistema IoT baseado em **ESP32**, que integra sensores físicos e comunicação via **protocolo MQTT**.
+## 🚨 Problema Identificado  
 
-### Principais Funcionalidades:
-- Detecção do **tempo de permanência sentado** (alerta Pomodoro);
-- Identificação de **postura incorreta** através do sensor MPU6050;
-- Cálculo da **distância entre o usuário e a tela**;
-- Medição da **temperatura e umidade** (sensor DHT22);
-- Emissão de **alertas visuais (LED)** e notificações via MQTT;
-- Envio de dados contínuos para o broker em formato **JSON**.
+Com o aumento do uso de computadores e home offices, milhões de pessoas passam horas sentadas, muitas vezes sem pausas, em más condições ergonômicas.  
+Esses fatores resultam em:
+- Dores lombares e problemas posturais;
+- Cansaço visual;
+- Diminuição da produtividade;
+- Sedentarismo e falta de pausas regulares.
 
 ---
 
-## 🛠️ Componentes Utilizados
+## 💡 Solução Desenvolvida  
+
+A solução proposta utiliza sensores conectados ao **ESP32** para detectar:
+- 🪑 Tempo sentado (botão de presença na cadeira);
+- 📏 Postura incorreta (sensor MPU6050);
+- 👀 Distância da tela (sensor ultrassônico HC-SR04);
+- 🌡️ Temperatura e umidade (sensor DHT22).  
+
+Os dados são enviados via **protocolo MQTT** ao broker `broker.emqx.io`, permitindo integração com dashboards e sistemas de automação.
+
+---
+
+## 🛠️ Componentes Utilizados  
+
 | Componente | Função | Pino |
 |-------------|--------|------|
-| ESP32 | Microcontrolador principal | - |
-| DHT22 | Sensor de temperatura e umidade | GPIO 4 |
-| MPU6050 | Sensor de movimento/postura | I2C |
-| HC-SR04 | Sensor ultrassônico (distância) | TRIG: 5 / ECHO: 18 |
-| Botão (Chair Sensor) | Detecta presença na cadeira | GPIO 33 |
+| ESP32 | Microcontrolador principal | — |
+| DHT22 | Temperatura e umidade | GPIO 4 |
+| MPU6050 | Postura corporal (aceleração e ângulo) | I2C |
+| HC-SR04 | Distância do usuário até a tela | TRIG: 5 / ECHO: 18 |
+| Botão | Detecta ocupação da cadeira | GPIO 33 |
 | LED | Alerta visual | GPIO 2 |
+
+<img width="1278" height="690" alt="Captura de tela 2025-11-13 155538" src="https://github.com/user-attachments/assets/dee7d348-b3ca-4a35-8b88-3e65b030a0fa" />
+
+yaml
+Copiar código
 
 ---
 
-## 🌐 Conectividade e Comunicação MQTT
+## 🌐 Conectividade MQTT  
 
-**Broker MQTT:** `test.mosquitto.org`  
-**Porta:** `1883`
+| Parâmetro | Valor |
+|------------|--------|
+| **Broker** | `broker.emqx.io` |
+| **Porta (TCP)** | `1883` |
+| **Porta (WebSocket)** | `8084` |
+| **Protocolo** | MQTT |
+| **Tópicos Principais** | `office/dados`, `office/alerta`, `office/ar` |
 
-### 📡 Tópicos Utilizados
-| Tópico | Função |
-|--------|--------|
-| `office/led` | Recebe comandos externos para o LED |
-| `office/alerta` | Publica mensagens de alerta (postura, tempo, distância) |
-| `office/ar` | Envia alertas de temperatura ambiente |
-| `office/dados` | Publica todos os dados em JSON |
-
-**Exemplo de Payload JSON:**
+**Exemplo de Payload JSON publicado:**  
 ```json
 {
   "temp": 26.4,
@@ -69,58 +72,79 @@ O **Monitor Inteligente de Postura e Ambiente** é um sistema IoT baseado em **E
   "ocupado": 1,
   "pomodoro": 28
 }
+🧠 Funcionamento
+O ESP32 coleta os dados dos sensores;
+
+Verifica postura, tempo sentado, distância da tela e temperatura;
+
+Envia os dados via MQTT para o broker broker.emqx.io;
+
+Dispara alertas visuais (LED) e mensagens em tópicos MQTT específicos;
+
+Os dados podem ser monitorados em tempo real em painéis como o EMQX Web Client.
+
+📊 <img width="1179" height="2556" alt="IMG_0724" src="https://github.com/user-attachments/assets/1ebe8f82-9795-48a2-bd8c-e96cc654f866" />
 
 
-
+scss
+Copiar código
 ⚙️ Instruções de Uso
-Acesse o projeto no Wokwi:
-👉 https://wokwi.com/projects/447533375028775937
+🧩 Simulador Wokwi
+Acesse o projeto completo:
+👉 [Monitor de Postura no Wokwi](https://wokwi.com/projects/447533375028775937)
 
-Execute o código no ESP32 (ou simulador Wokwi).
+Abra o link acima.
 
-No Serial Monitor (115200 baud), acompanhe as leituras e alertas.
+Execute a simulação.
 
-Acesse um cliente MQTT, como:
+No console do Wokwi, observe as leituras de sensores e alertas.
 
-HiveMQ Web Client
+🌐 Teste MQTT via Web
+Acesse o cliente online:
+👉 EMQX Online MQTT Client
 
-MQTT Explorer
+Configuração:
 
-Conecte-se ao broker e assine os tópicos:
+Host: broker.emqx.io
+
+Port: 8084
+
+Subscribe to topic:
 
 bash
 Copiar código
-office/dados
-office/alerta
-office/ar
-Observe os alertas e as medições em tempo real.
-<img width="1278" height="690" alt="Captura de tela 2025-11-13 155538" src="https://github.com/user-attachments/assets/a8d7660e-c096-45d7-b685-a08104b16aa4" />
-<img width="1910" height="916" alt="Captura de tela 2025-11-13 155510" src="https://github.com/user-attachments/assets/0bcaab9e-b941-4cc5-92cd-e6a8ab4787b2" />
+office/#
+Observe as mensagens chegando em tempo real 🚀
 
+📸 [Espaço reservado para print do MQTT Web Client]
+
+scss
+Copiar código
+<img width="1910" height="916" alt="Captura de tela 2025-11-13 155510" src="https://github.com/user-attachments/assets/62bd6d1a-a3b6-4261-8980-6087e3ccd19c" />
 
 📈 Resultados Esperados
-Redução de problemas posturais e fadiga visual;
-
-Incentivo a pausas e alongamentos regulares;
-
-Melhoria do bem-estar e produtividade;
-
-Aplicação prática em home offices e empresas.
+✅ Redução de problemas posturais e fadiga visual
+✅ Incentivo a pausas e alongamentos regulares
+✅ Melhoria no bem-estar e produtividade
+✅ Aplicação prática em home offices e empresas
 
 🔮 Possibilidades Futuras
-Dashboard web com gráficos em tempo real;
+🌐 Dashboard web com gráficos em tempo real
+📱 Integração com aplicativos móveis e assistentes de voz
+🏠 Automação de dispositivos inteligentes (ex: ligar o ar-condicionado via MQTT)
+🏫 Expansão para ambientes corporativos e educacionais
 
-Integração com apps móveis e assistentes de voz;
+📸 [Espaço reservado para print do dashboard futuro]
 
-Automação de dispositivos inteligentes (ex: ligar o ar-condicionado via MQTT);
-
-Expansão para ambientes corporativos e educacionais.
-
+scss
+Copiar código
+![Dashboard Web](./imagens/dashboard_futuro.png)
 👥 Autores
 Nome	RM
 João Lucas	562608
 Samuel de Oliveira	566244
 Rafael Felix	565855
 
-📜 Licença
-Este projeto foi desenvolvido para a disciplina Edge Computing & IoT no contexto da Global Solution FIAP 2025.2 – O Futuro do Trabalho.
+🧾 Licença
+Este projeto foi desenvolvido para a disciplina Edge Computing & IoT, dentro do contexto da
+Global Solution FIAP 2025.2 – O Futuro do Trabalho.
