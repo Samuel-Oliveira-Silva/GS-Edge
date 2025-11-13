@@ -71,7 +71,7 @@ O **Monitor Inteligente de Postura e Ambiente** é um sistema IoT baseado em **E
 }
 ⚙️ Instruções de Uso
 Acesse o projeto no Wokwi:
-👉 https://wokwi.com/projects/SEU-LINK-AQUI
+👉 https://wokwi.com/projects/447398308648781825
 
 Execute o código no ESP32 (ou simulador Wokwi).
 
