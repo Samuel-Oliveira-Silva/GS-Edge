@@ -64,14 +64,14 @@ Copiar código
 
 **Exemplo de Payload JSON publicado:**  
 json
-  {
+  ``{
     "temp": 26.4,
     "umidade": 52,
     "distancia": 55.7,
     "angulo": 8.4,
     "ocupado": 1,
     "pomodoro": 28
-  }
+  }``
 
 ## 🧠 Funcionamento
 O ESP32 coleta os dados dos sensores;
@@ -106,21 +106,20 @@ Acesse o cliente online:
 
 Configuração:
 
-Host: broker.emqx.io
+-Host: broker.emqx.io
 
-Port: 8084
+-Port: 8084
 
-Subscribe to topic:
+-Subscribe to topic:
 
-bash
 Copiar código
 office/#
+
 Observe as mensagens chegando em tempo real 🚀
 <img width="1798" height="833" alt="Captura de tela 2025-11-13 161356" src="https://github.com/user-attachments/assets/5e3aedff-f035-48b4-87a2-2789572bdc08" />
 
 
-scss
-Copiar código
+
 <img width="1910" height="916" alt="Captura de tela 2025-11-13 155510" src="https://github.com/user-attachments/assets/62bd6d1a-a3b6-4261-8980-6087e3ccd19c" />
 
 📈 Resultados Esperados
@@ -136,9 +135,6 @@ Copiar código
 🏫 Expansão para ambientes corporativos e educacionais
 
 
-scss
-Copiar código
-![Dashboard Web](./imagens/dashboard_futuro.png)
 ## 👥 Autores
 Nome	RM
 João Lucas	562608
