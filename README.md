@@ -63,16 +63,17 @@ Copiar código
 | **Tópicos Principais** | `office/dados`, `office/alerta`, `office/ar` |
 
 **Exemplo de Payload JSON publicado:**  
-```json
-{
-  "temp": 26.4,
-  "umidade": 52,
-  "distancia": 55.7,
-  "angulo": 8.4,
-  "ocupado": 1,
-  "pomodoro": 28
-}
-🧠 Funcionamento
+json
+  {
+    "temp": 26.4,
+    "umidade": 52,
+    "distancia": 55.7,
+    "angulo": 8.4,
+    "ocupado": 1,
+    "pomodoro": 28
+  }
+
+## 🧠 Funcionamento
 O ESP32 coleta os dados dos sensores;
 
 Verifica postura, tempo sentado, distância da tela e temperatura;
@@ -99,7 +100,7 @@ Execute a simulação.
 
 No console do Wokwi, observe as leituras de sensores e alertas.
 
-🌐 Teste MQTT via Web
+## 🌐 Teste MQTT via Web
 Acesse o cliente online:
 👉 EMQX Online MQTT Client
 
@@ -139,12 +140,12 @@ Copiar código
 scss
 Copiar código
 ![Dashboard Web](./imagens/dashboard_futuro.png)
-👥 Autores
+## 👥 Autores
 Nome	RM
 João Lucas	562608
 Samuel de Oliveira	566244
 Rafael Felix	565855
 
-🧾 Licença
+## 🧾 Licença
 Este projeto foi desenvolvido para a disciplina Edge Computing & IoT, dentro do contexto da
 Global Solution FIAP 2025.2 – O Futuro do Trabalho.
