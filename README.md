@@ -82,7 +82,7 @@ Envia os dados via MQTT para o broker broker.emqx.io;
 
 Dispara alertas visuais (LED) e mensagens em tópicos MQTT específicos;
 
-Os dados podem ser monitorados em tempo real em painéis como o EMQX Web Client.
+Os dados podem ser monitorados em tempo real em painéis como o EMQX Web Client ou no MyMqtt
 
 📊 <img width="1179" height="2556" alt="IMG_0724" src="https://github.com/user-attachments/assets/1ebe8f82-9795-48a2-bd8c-e96cc654f866" />
 
@@ -116,8 +116,8 @@ bash
 Copiar código
 office/#
 Observe as mensagens chegando em tempo real 🚀
+<img width="1798" height="833" alt="Captura de tela 2025-11-13 161356" src="https://github.com/user-attachments/assets/5e3aedff-f035-48b4-87a2-2789572bdc08" />
 
-📸 [Espaço reservado para print do MQTT Web Client]
 
 scss
 Copiar código
@@ -135,7 +135,6 @@ Copiar código
 🏠 Automação de dispositivos inteligentes (ex: ligar o ar-condicionado via MQTT)
 🏫 Expansão para ambientes corporativos e educacionais
 
-📸 [Espaço reservado para print do dashboard futuro]
 
 scss
 Copiar código
