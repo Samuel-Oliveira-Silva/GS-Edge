@@ -69,6 +69,9 @@ O **Monitor Inteligente de Postura e Ambiente** é um sistema IoT baseado em **E
   "ocupado": 1,
   "pomodoro": 28
 }
+
+
+
 ⚙️ Instruções de Uso
 Acesse o projeto no Wokwi:
 👉 https://wokwi.com/projects/447533375028775937
