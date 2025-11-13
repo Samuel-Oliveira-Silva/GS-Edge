@@ -94,6 +94,9 @@ office/dados
 office/alerta
 office/ar
 Observe os alertas e as medições em tempo real.
+<img width="1278" height="690" alt="Captura de tela 2025-11-13 155538" src="https://github.com/user-attachments/assets/a8d7660e-c096-45d7-b685-a08104b16aa4" />
+<img width="1910" height="916" alt="Captura de tela 2025-11-13 155510" src="https://github.com/user-attachments/assets/0bcaab9e-b941-4cc5-92cd-e6a8ab4787b2" />
+
 
 📈 Resultados Esperados
 Redução de problemas posturais e fadiga visual;
