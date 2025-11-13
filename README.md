@@ -66,7 +66,7 @@ O **Monitor Inteligente de Postura e Ambiente**:
 }
 ⚙️ Instruções de Uso
 Acesse o simulador Wokwi:
-👉 Link do Projeto no Wokwi
+👉 [Link do Projeto no Wokwi](https://wokwi.com/projects/447398308648781825)
 
 Execute o código no ESP32.
 
