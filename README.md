@@ -56,11 +56,10 @@ Copiar código
 
 | Parâmetro | Valor |
 |------------|--------|
-| **Broker** | `broker.emqx.io` |
-| **Porta (TCP)** | `1883` |
-| **Porta (WebSocket)** | `8084` |
+| **Broker** | `test.mosquitto.org` |
+| **Porta ** | `1883` |
 | **Protocolo** | MQTT |
-| **Tópicos Principais** | `office/dados`, `office/alerta`, `office/ar` |
+| **Tópicos Principais** | `office/dados`, `office/alerta`, `office/ar`,`office/led` |
 
 **Exemplo de Payload JSON publicado:**  
 json
