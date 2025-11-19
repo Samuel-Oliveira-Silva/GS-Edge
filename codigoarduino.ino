@@ -40,7 +40,7 @@ PubSubClient client(espClient); // Cliente MQTT
 // ---------------- REDE E MQTT ----------------
 const char* ssid = "Wokwi-GUEST";             // Nome da rede Wi-Fi (no simulador)
 const char* password = "";                    // Senha da rede Wi-Fi
-const char* mqtt_server = "broker.emqx.io";   // Servidor MQTT público
+const char* mqtt_server = "test.mosquitto.org";  // Servidor MQTT público
 
 // ---------------- VARIÁVEIS GLOBAIS ----------------
 unsigned long lastMsg = 0;    // Controle do tempo de envio das mensagens
