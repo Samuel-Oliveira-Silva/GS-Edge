@@ -106,14 +106,17 @@ Acesse o cliente online:
 
 Configuração:
 
--Host: broker.emqx.io
+-Host: test.mosquitto.org
 
--Port: 8084
+-Port: 1883
 
 -Subscribe to topic:
 
 Copiar código
-office/#
+office/dados
+office/ar
+office/alerta
+office/led
 
 Observe as mensagens chegando em tempo real 🚀
 <img width="1798" height="833" alt="Captura de tela 2025-11-13 161356" src="https://github.com/user-attachments/assets/5e3aedff-f035-48b4-87a2-2789572bdc08" />
