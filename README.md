@@ -101,7 +101,7 @@ No console do Wokwi, observe as leituras de sensores e alertas.
 
 ## 🌐 Teste MQTT via Web
 Acesse o cliente online:
-👉 EMQX Online MQTT Client
+👉 EMQX Online MQTT Client Ou no Celular no MyMqtt
 
 Configuração:
 
